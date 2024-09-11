@@ -13,8 +13,8 @@ systemd 是現代 Linux 系統中用來管理系統和服務的工具。使用 s
 1. 建立一個 systemd 服務檔案
 開啟終端設備機，然後使用 nano 或其他純文字編輯器建立一個新的服務檔案。例如，使用 nano 編輯器：
 
-sudo nano /etc/systemd/system/forward_magic_packet.service
-在檔案中加入 orward_magic_packet.service 的內容（假設 Python 指令碼的位置是 /home/your_username/magic_packet.py）：
+sudo nano /etc/systemd/system/Forward_magic_packet.service
+在檔案中加入 Forward_magic_packet.service 的內容（假設 Python 指令碼的位置是 /home/your_username/magic_packet.py）：
 
 Description: 給服務一個描述名稱。
 After: 確保網路服務啟動後才啟動此指令碼。
@@ -27,11 +27,11 @@ User: 設定為 root，確保使用 root 權限執行。
 重新載入 systemd 來讀取新的服務檔案：
 sudo systemctl daemon-reload
 啟用服務，使其在開機時自動啟動：
-sudo systemctl enable forward_magic_packet.service
+sudo systemctl enable Forward_magic_packet.service
 立即啟動服務：
-sudo systemctl start forward_magic_packet.service
+sudo systemctl start Forward_magic_packet.service
 檢查服務狀態：
-sudo systemctl status forward_magic_packet.service
+sudo systemctl status Forward_magic_packet.service
 如果服務執行正常，你會看到服務狀態顯示為 active (running)。
 
 方法 2: 修改 rc.local 檔案
