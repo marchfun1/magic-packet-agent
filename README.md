@@ -37,16 +37,12 @@ User: 設定為 root，確保使用 root 權限執行。
 
 2. 啟用並啟動服務
 重新載入 systemd 來讀取新的服務檔案：
-
 sudo systemctl daemon-reload
 啟用服務，使其在開機時自動啟動：
-
 sudo systemctl enable forward_magic_packet.service
 立即啟動服務：
-
 sudo systemctl start forward_magic_packet.service
 檢查服務狀態：
-
 sudo systemctl status forward_magic_packet.service
 如果服務執行正常，你會看到服務狀態顯示為 active (running)。
 
@@ -54,10 +50,8 @@ sudo systemctl status forward_magic_packet.service
 這種方法適合於需要在開機時簡單執行指令的情況。注意，某些較新的 Linux 發行版本可能不再使用 rc.local。
 
 開啟 rc.local 檔案進行編輯：
-
 sudo nano /etc/rc.local
 在 exit 0 之前加入以下行（假設你的指令碼路徑是 /home/your_username/magic_packet.py）：
-
 /usr/bin/python3 /home/your_username/magic_packet.py &
 & 使指令碼在背景執行。
 
