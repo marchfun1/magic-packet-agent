@@ -14,19 +14,7 @@ systemd 是現代 Linux 系統中用來管理系統和服務的工具。使用 s
 開啟終端設備機，然後使用 nano 或其他純文字編輯器建立一個新的服務檔案。例如，使用 nano 編輯器：
 
 sudo nano /etc/systemd/system/forward_magic_packet.service
-在檔案中加入以下內容（假設 Python 指令碼的位置是 /home/your_username/magic_packet.py）：
-
-[Unit]
-Description=Forward Magic Packet Service
-After=network.target
-
-[Service]
-ExecStart=/usr/bin/python3 /home/your_username/magic_packet.py
-Restart=always
-User=root
-
-[Install]
-WantedBy=multi-user.target
+在檔案中加入 orward_magic_packet.service 的內容（假設 Python 指令碼的位置是 /home/your_username/magic_packet.py）：
 
 Description: 給服務一個描述名稱。
 After: 確保網路服務啟動後才啟動此指令碼。
