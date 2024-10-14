@@ -16,3 +16,24 @@ chmod +x install.sh
 sudo ./install.sh  
   
 即可安裝為系統服務。    
+
+----------------------------------------------------------------------------------------
+(English)
+
+This project is specifically designed for remote wake-on-LAN operations for computers in a home or company local area network. Install this program on a Linux machine within the LAN to serve as a relay station for the magic packet.  
+
+Setup steps:  
+
+  1. A Linux system within the LAN needs to install this program  
+  2. Requires Python 3 (this program will automatically install it)
+  3. Needs the front-end firewall to forward UDP port 9 to the Linux system  
+
+Installation commands (execute the following commands in order):
+
+git clone https://github.com/marchfun1/magic-packet-forwarder.git  
+
+cd magic-packet-forwarder  
+
+chmod +x install.sh  
+
+sudo ./install.sh
