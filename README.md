@@ -4,6 +4,7 @@
   1. 在區域網路內部其中一部 Linux 上安裝本程式
   2. 需要 python 3 (若未安裝則本程式會自動安裝)  
   3. 需要前端路由器轉送 UDP 埠號 9 到該 Linux
+  4. 開放防火牆埠號 9  
 
 安裝指令：(依序執行以下指令)  
   
@@ -26,7 +27,8 @@ Setup steps:
 
   1. A Linux system within the LAN needs to install this program  
   2. Requires Python 3 (this program will automatically install it)
-  3. Needs the front-end router to forward UDP port 9 to the Linux system  
+  3. Needs the front-end router to forward UDP port 9 to the Linux system
+  4. Open firewall port 9  
 
 Installation commands (execute the following commands in order):
 
