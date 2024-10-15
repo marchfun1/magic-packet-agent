@@ -7,15 +7,24 @@
   4. 開放防火牆埠號 9  
 
 若系統中尚未安裝 git 則需使用以下指令安裝：  
-  <p><code>sudo apt install git</code></p>
+```
+sudo apt install git
+```
 
 安裝指令：(依序執行以下指令)  
+```
+git clone https://github.com/marchfun1/magic-packet-forwarder.git
+```
+```
+cd magic-packet-forwarder
+```
+```  
+chmod +x install.sh
+```
+```
+sudo ./install.sh
+```
 
-  <p><code>git clone https://github.com/marchfun1/magic-packet-forwarder.git</code></p> 
-  <p><code>cd magic-packet-forwarder</code></p>
-  <p><code>chmod +x install.sh</code></p>
-  <p><code>sudo ./install.sh</code></p> 
-  
 即可安裝為系統服務。    
 
 ----------------------------------------------------------------------------------------
@@ -31,11 +40,20 @@ Setup steps:
   4. Open firewall port 9  
 
 If git is not installed in the system, you need to use the following command to install it:  
- <p><code>sudo apt install git</code></p>  
+```
+sudo apt install git
+``` 
 
 Installation commands (execute the following commands in order):
-
-  <p><code>git clone https://github.com/marchfun1/magic-packet-forwarder.git</code></p> 
-  <p><code>cd magic-packet-forwarder</code></p>
-  <p><code>chmod +x install.sh</code></p>
-  <p><code>sudo ./install.sh</code></p> 
+```
+git clone https://github.com/marchfun1/magic-packet-forwarder.git
+```
+```
+cd magic-packet-forwarder
+```
+```  
+chmod +x install.sh
+```
+```
+sudo ./install.sh
+```
