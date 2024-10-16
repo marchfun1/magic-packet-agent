@@ -16,7 +16,7 @@ sudo apt install git
 git clone https://github.com/marchfun1/magic-packet-agent.git
 ```
 ```
-cd magic-packet-forwarder
+cd magic-packet-agent
 ```
 ```  
 chmod +x install.sh
@@ -49,7 +49,7 @@ Installation commands (execute the following commands in order):
 git clone https://github.com/marchfun1/magic-packet-agent.git
 ```
 ```
-cd magic-packet-forwarder
+cd magic-packet-agent
 ```
 ```  
 chmod +x install.sh
