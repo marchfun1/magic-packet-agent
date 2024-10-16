@@ -13,7 +13,7 @@ sudo apt install git
 
 安裝指令：(依序執行以下指令)  
 ```
-git clone https://github.com/marchfun1/magic-packet-forwarder.git
+git clone https://github.com/marchfun1/magic-packet-agent.git
 ```
 ```
 cd magic-packet-forwarder
@@ -46,7 +46,7 @@ sudo apt install git
 
 Installation commands (execute the following commands in order):
 ```
-git clone https://github.com/marchfun1/magic-packet-forwarder.git
+git clone https://github.com/marchfun1/magic-packet-agent.git
 ```
 ```
 cd magic-packet-forwarder
