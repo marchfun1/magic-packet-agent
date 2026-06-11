@@ -1,9 +1,19 @@
 #!/bin/bash
+set -euo pipefail
 
 # 檢查是否以 root 權限運行
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
-  exit
+  exit 1
+fi
+
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+SCRIPT_NAME="magic_packet.py"
+SCRIPT_PATH="$SCRIPT_DIR/$SCRIPT_NAME"
+
+if [ ! -f "$SCRIPT_PATH" ]; then
+  echo "Cannot find $SCRIPT_NAME in $SCRIPT_DIR"
+  exit 1
 fi
 
 # 安裝必要的依賴項（如果需要，這裡以 Python 為例）
@@ -12,11 +22,7 @@ DEBIAN_FRONTEND=noninteractive apt-get install -y python3
 
 # 複製 Python 腳本到 /usr/local/bin
 INSTALL_DIR="/usr/local/bin"
-SCRIPT_NAME="magic_packet.py"
-cp $SCRIPT_NAME $INSTALL_DIR
-
-# 確保腳本可執行
-chmod +x $INSTALL_DIR/$SCRIPT_NAME
+install -m 0755 "$SCRIPT_PATH" "$INSTALL_DIR/$SCRIPT_NAME"
 
 # 設定 systemd 服務
 SERVICE_FILE="/etc/systemd/system/forward_magic_packet.service"
@@ -27,17 +33,17 @@ if [ -f "$SERVICE_FILE" ]; then
 fi
 
 # 寫入 systemd 服務文件
-cat <<EOL > $SERVICE_FILE
+cat <<EOL > "$SERVICE_FILE"
 [Unit]
 Description=Forward Magic Packet Service
 After=network.target
 
 [Service]
-ExecStart=/usr/bin/python3 $INSTALL_DIR/$SCRIPT_NAME
+ExecStart=/usr/bin/python3 "$INSTALL_DIR/$SCRIPT_NAME"
 Restart=always
 DynamicUser=yes
 AmbientCapabilities=CAP_NET_BIND_SERVICE
-WorkingDirectory=$INSTALL_DIR
+WorkingDirectory="$INSTALL_DIR"
 StandardOutput=journal
 StandardError=journal
 
